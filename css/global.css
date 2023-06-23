@@ -192,7 +192,7 @@ ol {
 }
 .icon-md svg {
   width: 24px;
-  height: 24;
+  height: 24px;
 }
 .icon-lg svg {
   width: 32px;
@@ -242,6 +242,48 @@ ol {
   border-color: var(--main-color);
 }
 /* End of Buttons */
+
+/* Start of Modals */
+.modal .btn-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  opacity: 1;
+  background-color: var(--main-color);
+  background-image: none;
+  border-radius: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  border: 1px solid var(--main-color);
+  padding: 2px;
+}
+[dir="rtl"] .modal .btn-close {
+  right: auto;
+  left: 0;
+}
+.modal .btn-close:hover {
+  color: var(--main-color);
+  background-color: var(--light);
+}
+.modal .modal-content {
+  border-radius: 0;
+}
+/* End of Modals */
+
+/* Start of Form Controls */
+.form-control:focus {
+  box-shadow: none !important;
+  outline: none !important;
+  border-color: var(--dark) !important;
+}
+.form-control:hover {
+  border-color: var(--dark) !important;
+}
+/* End of Form Controls */
 
 /* Start of Swiper reset */
 .swiper-lazy-preloader {
