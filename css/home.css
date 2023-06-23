@@ -352,6 +352,10 @@ body {
 /* End of Contact Section */
 
 /* Start of Download Profile */
+.download-profile {
+  background-size: cover;
+  background-position: 50% 50%;
+}
 .download-profile::before {
   content: "";
   position: absolute;

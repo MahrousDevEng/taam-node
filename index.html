@@ -859,7 +859,34 @@
         <!-- End of Company Profile -->
       </main>
       <!-- End of Content -->
+
+      <!-- Start of Bottom Footer -->
+      <div class="bg-black text-white" dir="ltr">
+        <div class="container py-3 text-center">
+          <p class="my-0" style="font-size: 0.65rem">
+            © 2023. All Rights Reserved. | Developed & Designed by
+            <a href="https://psdigital.me" target="_blank" rel="noopener"
+              >PSdigital</a
+            >
+          </p>
+        </div>
+      </div>
+      <!-- End of Bottom Footer -->
     </div>
+
+    <!-- Start of Back To Top Button -->
+    <div class="scroll-top-btn-wrapper smooth" id="scrollToTopBtn">
+      <button type="button" class="btn scroll-top-btn" aria-label="back to top">
+        <img
+          src="./images/icons/chevron-up.svg"
+          alt="go-to-top"
+          loading="lazy"
+          width="20"
+          height="20"
+        />
+      </button>
+    </div>
+    <!-- End of Back To Top Button -->
 
     <!-- Start of Download Profile Modal -->
     <div
@@ -905,15 +932,17 @@
             <p class="mb-0">file the form below to download our Profile</p>
           </div>
           <div class="modal-body p-4">
-            <form>
+            <form class="needs-validation" novalidate>
               <div class="form-floating mb-4">
                 <input
                   type="text"
                   class="form-control border-0 border-bottom border-2 rounded-0 px-0"
                   id="userName"
                   placeholder="Name *"
+                  required
                 />
                 <label for="userName" class="px-0">Name *</label>
+                <div class="invalid-feedback">Name is required.</div>
               </div>
 
               <div class="form-floating mb-4">
@@ -922,8 +951,10 @@
                   class="form-control border-0 border-bottom border-2 rounded-0 px-0"
                   id="userEmail"
                   placeholder="Email *"
+                  required
                 />
                 <label for="userName" class="px-0">Email *</label>
+                <div class="invalid-feedback">Email is required.</div>
               </div>
 
               <div class="form-floating mb-5">
@@ -932,11 +963,16 @@
                   class="form-control border-0 border-bottom border-2 rounded-0 px-0"
                   id="userPhone"
                   placeholder="Phone *"
+                  required
+                  pattern="[0-9]{11}"
                 />
                 <label for="userName" class="px-0">Phone *</label>
+                <div class="invalid-feedback">Phone is required.</div>
               </div>
 
-              <button type="submit" class="btn btn-main mx-auto">download now</button>
+              <button type="submit" class="btn btn-main mx-auto">
+                download now
+              </button>
             </form>
           </div>
         </div>
@@ -954,6 +990,7 @@
     <script src="plugins/aos/aos.js" defer></script>
     <!-- Main Script -->
     <script src="js/main.js" defer></script>
+    <script src="js/validateForm.js" defer></script>
     <script src="js/home.js" defer></script>
   </body>
 </html>

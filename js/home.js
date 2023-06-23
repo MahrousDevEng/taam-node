@@ -98,4 +98,13 @@ document.addEventListener("DOMContentLoaded", () => {
       },
     });
   }
+
+  // Close Download Profile Modal fire reset form
+  const myModalEl = document.getElementById("downloadProfileForm");
+  const modalForm = myModalEl?.querySelector("form");
+  if (myModalEl) {
+    myModalEl.addEventListener("hidden.bs.modal", (event) => {
+      modalForm.reset();
+    });
+  }
 });
