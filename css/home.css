@@ -1,0 +1,383 @@
+body {
+  counter-reset: number;
+}
+
+/* Start of Section Title */
+.section-title {
+  font-size: calc(2.5rem + 1vw);
+  font-weight: 300;
+  color: var(--dark);
+  text-transform: capitalize;
+  margin-bottom: 1.25rem;
+}
+.section-title .special {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+/* End of Section Title */
+
+/* Start of Main Banner */
+.main-banner .banner-item {
+  height: 70vh;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+@media screen and (min-width: 992px) {
+  .main-banner .banner-item {
+    height: 100vh;
+  }
+}
+.main-banner .banner-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(34, 34, 34, 0.4);
+}
+@media screen and (min-width: 992px) {
+  .main-banner .banner-item .banner-item-content {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.main-banner .banner-item .banner-item-img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  -webkit-animation: zoomIn 15s linear infinite;
+  -moz-animation: zoomIn 15s linear infinite;
+  animation: zoomIn 15s linear infinite;
+}
+.main-banner .banner-item .banner-item-content .title {
+  font-size: calc(2.5rem + 1.5vw);
+}
+.main-banner .banner-item .banner-item-content .desc {
+  font-size: 17px;
+}
+.main-banner .banner-item .banner-item-content .btn {
+  font-size: 0.75rem;
+  min-width: 140px;
+}
+@media screen and (min-width: 576px) {
+  .main-banner .banner-item .banner-item-content .btn {
+    font-size: 1rem;
+    min-width: 160px;
+  }
+}
+.main-banner .dots {
+  position: absolute;
+  bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  z-index: 10;
+}
+.main-banner .dots .dot {
+  font-size: 0;
+  border: 0;
+  background-color: var(--light-grey);
+  width: 24px;
+  height: 8px;
+  margin: 0 5px;
+  -webkit-transition: var(--smooth);
+  -moz-transition: var(--smooth);
+  transition: var(--smooth);
+}
+.main-banner .dots .dot.active {
+  width: 32px;
+  background-color: var(--main-color);
+}
+/* End of Main Banner */
+
+/* Start of About Section */
+.about .img-wrapper {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+@media screen and (min-width: 992px) {
+  .about .img-wrapper {
+    height: 600px;
+  }
+}
+.about .img-wrapper img {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 1s ease-in-out;
+  -moz-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
+}
+.about .img-wrapper:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.about .text-editor p:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
+.about .text-editor p:last-of-type {
+  margin-bottom: 0;
+}
+/* End of About Section */
+
+/* Start of Specialities Section */
+.specialities .specialty-item {
+  padding: 1.25rem;
+  background-color: var(--light);
+  border: 2px solid var(--light-grey);
+  min-width: 200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.25rem;
+  position: relative;
+}
+.specialities .specialty-item:hover {
+  box-shadow: rgba(215, 40, 43, 0.09) 0px 14px 24px 0px;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+.specialities .specialty-item:hover img {
+  animation: hvr-buzz-out 0.75s linear 1;
+}
+.specialities .specialty-item::after {
+  content: counter(number);
+  counter-increment: number;
+  color: var(--light-grey);
+  font-size: calc(4rem + 2vw);
+  font-weight: 700;
+  position: absolute;
+  line-height: 1;
+  top: 0;
+  right: 0;
+}
+[dir="rtl"] .specialities .specialty-item::after {
+  right: auto;
+  left: 0;
+}
+/* End of Specialities Section */
+
+/* Start of Projects Section */
+.project-item {
+  box-shadow: var(--shadow-sm);
+  background-color: var(--light);
+}
+.project-item:hover {
+  box-shadow: var(--shadow-md);
+}
+.project-item .image {
+  display: flex;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  position: relative;
+}
+.project-item .image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  object-position: 50% 50%;
+}
+.project-item:hover .image img {
+  transform: scale(1.1);
+}
+.project-item .content {
+  display: flex;
+  flex-direction: column;
+}
+.project-item:hover .content .project-title {
+  color: var(--main-color);
+}
+.project-item .content .btn-project {
+  padding: 0;
+  font-weight: 300;
+  position: relative;
+  font-size: 0.9rem;
+}
+.project-item .content .btn-project::before {
+  content: "";
+  height: 2px;
+  width: 0;
+  background-color: var(--main-color);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.project-item .content .btn-project::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--dark);
+}
+.project-item .content .btn-project:hover {
+  gap: 0.5rem;
+}
+.project-item .content .btn-project:hover::after {
+  opacity: 0;
+}
+.project-item .content .btn-project:hover::before {
+  width: 20px;
+}
+/* End of Projects Section */
+
+/* Start of Certificates Section */
+.certificates {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  text-align: center;
+  position: relative;
+  background-size: cover;
+  background-position: 50% 50%;
+  min-height: 50vh;
+}
+.certificates::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+@media screen and (min-width: 768px) {
+  .certificates .section-desc {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+/* End of Certificates Section */
+
+/* Start of Clients Section */
+.clients .client-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.clients .client-item img {
+  object-fit: contain;
+  max-width: 100%;
+  height: 60px;
+}
+/* End of Clients Section */
+
+/* Start of Contact Section */
+.contact {
+  background-size: cover;
+  color: var(--light);
+  position: relative;
+}
+.contact::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  top: 0;
+  height: 100%;
+  background-color: var(--main-color);
+  opacity: 0.9;
+}
+.contact .contact-items .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+}
+.contact .contact-items .contact-item:not(:last-of-type) {
+  margin-bottom: 1.25rem;
+}
+.contact .contact-items .contact-item img {
+  object-fit: contain;
+  width: 18px;
+  height: 18px;
+}
+.contact .contact-items .contact-item .btn-text-effect {
+  display: block;
+  width: fit-content;
+  position: relative;
+}
+.contact .contact-items .contact-item .btn-text-effect::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background-color: var(--light);
+  -webkit-transition: var(--smooth);
+  -moz-transition: var(--smooth);
+  transition: var(--smooth);
+}
+.contact .contact-items .contact-item .btn-text-effect.show-start::after {
+  width: 100%;
+}
+.contact .contact-items .contact-item .btn-text-effect.show-start:hover::after {
+  width: 0;
+}
+.contact .contact-items .contact-item .btn-text-effect:not(.show-start)::after {
+  width: 0;
+}
+.contact
+  .contact-items
+  .contact-item
+  .btn-text-effect:not(.show-start):hover::after {
+  width: 100%;
+}
+/* End of Contact Section */
+
+/* Start of Animations */
+@-webkit-keyframes zoomIn {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* End of Animations */
