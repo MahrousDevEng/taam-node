@@ -166,6 +166,9 @@ ol {
   -webkit-line-clamp: 3;
   line-clamp: 3;
 }
+.invalid-feedback {
+  font-size: 0.75rem;
+}
 /* Start of EN Headings Fonts */
 [dir="ltr"] h1,
 [dir="ltr"] .h1,
@@ -241,6 +244,18 @@ ol {
   color: var(--light);
   background-color: var(--main-color);
   border-color: var(--main-color);
+}
+.btn.btn-social {
+  width: 35px;
+  height: 35px;
+  color: var(--light);
+  background-color: var(--main-color);
+  border: 1px solid var(--main-color);
+  padding: 5px;
+}
+.btn.btn-social:hover {
+  color: var(--main-color);
+  background-color: var(--light);
 }
 /* End of Buttons */
 
@@ -332,6 +347,87 @@ ol {
   animation: none !important;
 }
 /* End of Swiper reset */
+
+/* Start of Footer */
+.footer .footer-heading {
+  font-size: calc(1.25rem + 0.25vw);
+  text-transform: capitalize;
+}
+.footer .footer-heading.accordion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+.footer .footer-heading.accordion:not(.collapsed) .accordion-icon {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.footer .footer-links-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  max-height: 200px;
+}
+.footer .footer-links-wrapper .footer-link {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  display: block;
+  position: relative;
+  width: fit-content;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+.footer .footer-links-wrapper .footer-link::after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 0px;
+  height: 1px;
+  background-color: var(--light);
+  transition: all 0.25s ease-in-out 0s;
+}
+.footer .footer-links-wrapper .footer-link:hover::after {
+  width: 100%;
+}
+.footer .newsletter-form .form-control {
+  background-color: rgba(217, 197, 197, 0.06);
+  border: none;
+  color: var(--light);
+  border-radius: 0;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem;
+}
+.footer .newsletter-form label {
+  font-size: 0.85rem;
+}
+.footer .newsletter-form button {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  background-color: rgba(217, 197, 197, 0.06);
+}
+.footer .newsletter-form .submit-icon {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+@media screen and (min-width: 992px) {
+  .footer .footer-heading {
+    pointer-events: none !important;
+  }
+  .footer .collapse:not(.show) {
+    display: block !important;
+  }
+  .footer .footer-heading.accordion .accordion-icon {
+    display: none !important;
+  }
+}
+/* End of Footer */
 
 /* Start of Animations */
 @-webkit-keyframes hvr-buzz-out {
