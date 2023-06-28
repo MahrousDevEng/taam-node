@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const rootElement = document.documentElement;
+  const fixedHeader = document.querySelector("header.header-fixed");
+  const headerFixedClass = "triggered";
 
   // Trigger Lazy Load
   const lazyImages = document.querySelectorAll(".lazy");
@@ -27,13 +29,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const handleScroll = () => {
     // Do something on scroll - 0.15 is the percentage the page has to scroll before the button appears
     // This can be changed - experiment
-    var scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
+    const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight;
     if (rootElement.scrollTop / scrollTotal > 0.15) {
       // Show button
       scrollTopBtn.classList.add("show");
     } else {
       // Hide button
       scrollTopBtn.classList.remove("show");
+    }
+
+    if (fixedHeader) {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 150) {
+        !fixedHeader.classList.contains(headerFixedClass) &&
+          fixedHeader.classList.add(headerFixedClass);
+      } else {
+        fixedHeader.classList.contains(headerFixedClass) &&
+          fixedHeader.classList.remove(headerFixedClass);
+      }
     }
   };
 
