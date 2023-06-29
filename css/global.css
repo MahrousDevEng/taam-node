@@ -90,6 +90,7 @@ html {
 * {
   box-sizing: border-box;
   outline: none;
+  user-select: none;
 }
 body {
   font-family: var(--en-font-family);
@@ -168,6 +169,9 @@ ol {
 }
 .text-inherit {
   color: inherit;
+}
+.text-main {
+  color: var(--main-color);
 }
 .invalid-feedback {
   font-size: 0.75rem;
@@ -396,6 +400,8 @@ ol {
   -webkit-animation: slideDown 0.35s ease-out;
   -moz-animation: slideDown 0.35s ease-out;
   animation: slideDown 0.35s ease-out;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 1px -1px,
+    rgba(0, 0, 0, 0.14) 0px 1px 1px 0px, rgba(0, 0, 0, 0.12) 0px 1px 3px 0px;
 }
 .header-fixed:not(.triggered) .normal-logo,
 .header-fixed.triggered .fixed-logo,

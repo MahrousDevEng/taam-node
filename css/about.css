@@ -1,0 +1,108 @@
+.section-title {
+  font-size: calc(2.25rem + 1.25vw);
+}
+/* Start of Page Banner */
+.page-banner {
+  height: 300px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.page-banner::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0px;
+  z-index: 1;
+}
+.page-banner .info {
+  z-index: 2;
+}
+.page-banner .title {
+  font-size: calc(2.25rem + 1.25vw);
+}
+.page-banner .breadcrumb-item:not(.active) {
+  opacity: 0.6;
+}
+.page-banner .breadcrumb-item.active {
+  opacity: 1;
+  color: var(--light);
+}
+@media screen and (min-width: 992px) {
+  .page-banner {
+    height: 400px;
+  }
+}
+/* End of Page Banner */
+
+/* Start of Who We Are */
+.who-we-are {
+  background-color: var(--light-grey);
+}
+.who-we-are .image {
+  height: 400px;
+}
+.who-we-are .image:hover img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  transform: scale(1.1);
+}
+@media screen and (min-width: 992px) {
+  .who-we-are .image {
+    height: 600px;
+  }
+}
+/* End of Who We Are */
+
+/* Start of Corporate */
+.corporate .member-item {
+  max-width: 250px;
+}
+.corporate .member-item .image {
+  width: 200px;
+  height: 200px;
+}
+/* End of Corporate */
+
+/* Start of Company Structure */
+.company-structure {
+  background-color: var(--light-grey);
+}
+.company-structure .image {
+  height: 500px;
+}
+.company-structure .company-item {
+  border: 2px solid #f8f8f8;
+  height: 100%;
+  counter-reset: numbering;
+}
+.company-structure .company-item:hover {
+  box-shadow: 0px 14px 24px 0px #d7282b17;
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px);
+}
+.company-structure .company-item:hover img {
+  -webkit-animation: hvr-buzz-out 0.75s linear 1;
+  -moz-animation: hvr-buzz-out 0.75s linear 1;
+  animation: hvr-buzz-out 0.75s linear 1;
+}
+.company-structure .company-item .number {
+  right: 0;
+  top: -20px;
+  font-size: 80px;
+  color: #f8f8f8;
+}
+[dir="rtl"] .company-structure .company-item .number {
+  right: auto;
+  left: 0;
+}
+/* End of Company Structure */
+
+/* Start of Why Taam */
+.why-taam .image {
+  height: 400px;
+}
+/* End of Why Taam */
