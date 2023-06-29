@@ -51,4 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   document.addEventListener("scroll", handleScroll);
+
+  // Handle NewsLetter Form Validation
+  const newsLetterForm = document.getElementById("newsLetterForm");
+
+  if (newsLetterForm) {
+    new Validator(
+      newsLetterForm,
+      (err, res) => {
+        // return res;
+      },
+      {
+        removeSpaces: true,
+      }
+    );
+  }
 });

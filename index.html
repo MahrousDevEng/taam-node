@@ -1302,14 +1302,15 @@
                 Subscribe to our newsletter
               </p>
 
-              <form class="newsletter-form needs-validation mb-4" novalidate>
-                <div class="input-group has-validation">
+              <form class="newsletter-form mb-4" id="newsLetterForm">
+                <div class="input-group">
                   <input
                     type="email"
                     class="form-control"
                     id="newsLetterEmail"
+                    name="newsLetterEmail"
                     placeholder="Email Address"
-                    required
+                    data-rule="required|email"
                   />
                   <button
                     type="submit"
@@ -1324,7 +1325,6 @@
                       class="submit-icon"
                     />
                   </button>
-                  <div class="invalid-feedback">Email is required.</div>
                 </div>
               </form>
 
@@ -1468,7 +1468,7 @@
             <p class="mb-0">file the form below to download our Profile</p>
           </div>
           <div class="modal-body p-4">
-            <form class="needs-validation" novalidate>
+            <form class="needs-validation">
               <div class="form-floating mb-4">
                 <input
                   type="text"
@@ -1525,8 +1525,9 @@
     <!-- AOS -->
     <script src="plugins/aos/aos.js" defer></script>
     <!-- Main Script -->
+    <script src="plugins/validator/js-form-validator.min.js" defer></script>
     <script src="js/main.js" defer></script>
-    <script src="js/validateForm.js" defer></script>
+    <!-- <script src="js/validateForm.js" defer></script> -->
     <script src="js/home.js" defer></script>
   </body>
 </html>
