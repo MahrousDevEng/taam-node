@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     handleHeaderScroll();
   };
 
-  document.addEventListener("scroll", handleScroll);
+  document.addEventListener("scroll", handleScroll, { passive: true });
 
   // Handle NewsLetter Form Validation
   const newsLetterForm = document.getElementById("newsLetterForm");
