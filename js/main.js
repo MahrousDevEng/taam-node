@@ -71,7 +71,4 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     );
   }
-
-  document.addEventListener("touchstart", () => {}, { passive: true });
-  document.addEventListener("wheel", () => {}, { passive: true });
 });
