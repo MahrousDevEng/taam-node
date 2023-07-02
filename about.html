@@ -637,6 +637,38 @@
           </div>
         </section>
         <!-- End of Why Taam -->
+
+        <!-- Start of Organization Chart -->
+        <section
+          class="organization-chart lazy blur-up"
+          data-bg="images/banner-1.webp"
+        >
+          <div class="container py-5">
+            <div class="row justify-content-center">
+              <div class="col-12 col-sm-8">
+                <div class="text-center position-relative z-2">
+                  <h2 class="text-capitalize section-title mb-4">
+                    <span class="fw-bold text-main">TAAM</span>
+                    Company Organization Chart
+                  </h2>
+                  <p class="mb-5">
+                    Learn more about our company hierarchy with this
+                    organization chart.
+                  </p>
+                  <button
+                    type="button"
+                    class="btn btn-main mx-auto"
+                    data-bs-toggle="modal"
+                    data-bs-target="#organizationChart"
+                  >
+                    view chart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- End of Organization Chart -->
       </main>
       <!-- End of Content -->
 
@@ -928,6 +960,109 @@
     </div>
     <!-- End of Back To Top Button -->
 
+    <!-- Start of Organization Chart Modal -->
+    <div
+      class="modal fade"
+      id="organizationChart"
+      tabindex="-1"
+      aria-labelledby="organizationChartLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close smooth"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          >
+            <i class="icon icon-lg d-flex">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="feather feather-x"
+              >
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </i>
+          </button>
+
+          <div
+            class="zoom-wrapper d-flex align-items-center gap-2 position-absolute"
+          >
+            <button class="btn-zoom smooth" aria-label="zoom in" id="zoomInBtn">
+              <div class="icon icon-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-zoom-in"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="11" y1="8" x2="11" y2="14" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+              </div>
+            </button>
+
+            <button
+              class="btn-zoom smooth"
+              aria-label="zoom out"
+              id="zoomOutBtn"
+            >
+              <div class="icon icon-md">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="feather feather-zoom-out"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                  <line x1="8" y1="11" x2="14" y2="11" />
+                </svg>
+              </div>
+            </button>
+          </div>
+
+          <div class="position-relative overflow-hidden" style="height: 70vh">
+            <img
+              src="images/chart.webp"
+              data-src="images/chart.webp"
+              alt="organization chart"
+              width="750"
+              height="530"
+              class="lazy blur-up position-absolute start-0 end-0 top-0 w-100 h-100"
+              style="object-fit: contain"
+              id="imgChart"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End of Organization Chart Modal -->
+
     <!-- Start of Download Profile Modal -->
     <div
       class="modal fade"
@@ -1026,8 +1161,42 @@
     <script src="plugins/lazyload.min.js" defer></script>
     <!-- AOS -->
     <script src="plugins/aos/aos.js" defer></script>
-    <!-- Main Script -->
+    <!-- Form Validation -->
     <script src="plugins/validator/js-form-validator.min.js" defer></script>
+    <!-- wheel-zoom-master -->
+    <script src="plugins/wheel-zoom-master/wheel-zoom.min.js" defer></script>
+    <!-- Main Script -->
     <script src="js/main.js" defer></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imgChartEl = document.getElementById("imgChart");
+        const btnZoomIn = document.getElementById("zoomInBtn");
+        const btnZoomOut = document.getElementById("zoomOutBtn");
+
+        if (imgChartEl) {
+          const myZoom = WZoom.create(imgChartEl, {
+            minScale: 1,
+            maxScale: 5,
+            dragscrollable: false,
+            zoomOnClick: false,
+          });
+
+          if (btnZoomIn) {
+            btnZoomIn.addEventListener("click", (e) => {
+              e.preventDefault();
+
+              myZoom.zoomUp();
+            });
+          }
+          if (btnZoomOut) {
+            btnZoomOut.addEventListener("click", (e) => {
+              e.preventDefault();
+
+              myZoom.zoomDown();
+            });
+          }
+        }
+      });
+    </script>
   </body>
 </html>

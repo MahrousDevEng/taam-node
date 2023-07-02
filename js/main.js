@@ -26,6 +26,20 @@ document.addEventListener("DOMContentLoaded", () => {
     scrollTopBtn.addEventListener("click", scrollToTop);
   }
 
+  const handleHeaderScroll = () => {
+    if (fixedHeader) {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 150) {
+        !fixedHeader.classList.contains(headerFixedClass) &&
+          fixedHeader.classList.add(headerFixedClass);
+      } else {
+        fixedHeader.classList.contains(headerFixedClass) &&
+          fixedHeader.classList.remove(headerFixedClass);
+      }
+    }
+  };
+  handleHeaderScroll();
+
   const handleScroll = () => {
     // Do something on scroll - 0.15 is the percentage the page has to scroll before the button appears
     // This can be changed - experiment
@@ -38,16 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollTopBtn.classList.remove("show");
     }
 
-    if (fixedHeader) {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 150) {
-        !fixedHeader.classList.contains(headerFixedClass) &&
-          fixedHeader.classList.add(headerFixedClass);
-      } else {
-        fixedHeader.classList.contains(headerFixedClass) &&
-          fixedHeader.classList.remove(headerFixedClass);
-      }
-    }
+    handleHeaderScroll();
   };
 
   document.addEventListener("scroll", handleScroll);
