@@ -691,7 +691,7 @@
                 class="d-flex"
               >
                 <img
-                  src="images/placeholderTAAM.webp"
+                  src="images/Buna-logo.webp"
                   data-src="images/Buna-logo.webp"
                   alt="Buna"
                   width="120"
@@ -1167,36 +1167,6 @@
     <script src="plugins/wheel-zoom-master/wheel-zoom.min.js" defer></script>
     <!-- Main Script -->
     <script src="js/main.js" defer></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const imgChartEl = document.getElementById("imgChart");
-        const btnZoomIn = document.getElementById("zoomInBtn");
-        const btnZoomOut = document.getElementById("zoomOutBtn");
-
-        if (imgChartEl) {
-          const myZoom = WZoom.create(imgChartEl, {
-            minScale: 1,
-            maxScale: 5,
-            dragscrollable: false,
-            zoomOnClick: false,
-          });
-
-          if (btnZoomIn) {
-            btnZoomIn.addEventListener("click", (e) => {
-              e.preventDefault();
-
-              myZoom.zoomUp();
-            });
-          }
-          if (btnZoomOut) {
-            btnZoomOut.addEventListener("click", (e) => {
-              e.preventDefault();
-
-              myZoom.zoomDown();
-            });
-          }
-        }
-      });
-    </script>
+    <script src="js/about.js" defer></script>
   </body>
 </html>
