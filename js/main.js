@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Trigger AOS
-  AOS.init();
+  AOS && AOS.init();
 
   // Scroll To Top
   const scrollTopBtn = document.getElementById("scrollToTopBtn");

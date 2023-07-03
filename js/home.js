@@ -107,4 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
       modalForm.reset();
     });
   }
+
+  // Handle Download  Form Validation
+  const downloadProfileForm = document.getElementById("download_profile");
+
+  if (downloadProfileForm) {
+    new Validator(
+      downloadProfileForm,
+      (err, res) => {
+        // return res;
+      },
+      {
+        removeSpaces: true,
+      }
+    );
+  }
 });
