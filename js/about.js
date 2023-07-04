@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Trigger AOS
+  AOS && AOS.init();
+
   const imgChartEl = document.getElementById("imgChart");
   const btnZoomIn = document.getElementById("zoomInBtn");
   const btnZoomOut = document.getElementById("zoomOutBtn");

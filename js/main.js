@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const lazyLoadInstance = new LazyLoad();
   }
 
-  // Trigger AOS
-  AOS && AOS.init();
-
   // Scroll To Top
   const scrollTopBtn = document.getElementById("scrollToTopBtn");
 
@@ -61,14 +58,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const newsLetterForm = document.getElementById("newsLetterForm");
 
   if (newsLetterForm) {
-    new Validator(
-      newsLetterForm,
-      (err, res) => {
-        // return res;
-      },
-      {
+    newsLetterForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const validateHandler = new Validator(newsLetterForm, (err, res) => res, {
         removeSpaces: true,
+      });
+
+      const isValid = validateHandler.validate();
+
+      if (isValid) {
+        const email = e.currentTarget.newsLetterEmail.value;
+
+        console.log("Email: ", email);
       }
-    );
+    });
   }
 });

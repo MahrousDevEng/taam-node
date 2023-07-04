@@ -1,4 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // Trigger AOS
+  AOS && AOS.init();
+
   const globalSwiperConfig = {
     loop: true,
     spaceBetween: 30,
@@ -112,14 +115,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const downloadProfileForm = document.getElementById("download_profile");
 
   if (downloadProfileForm) {
-    new Validator(
-      downloadProfileForm,
-      (err, res) => {
-        // return res;
-      },
-      {
-        removeSpaces: true,
+    downloadProfileForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const validateHandler = new Validator(
+        downloadProfileForm,
+        (err, res) => res,
+        {
+          removeSpaces: true,
+        }
+      );
+
+      const isValid = validateHandler.validate();
+
+      if (isValid) {
+        const userName = e.currentTarget.userName.value;
+        const userEmail = e.currentTarget.userEmail.value;
+        const userPhone = e.currentTarget.userPhone.value;
+
+        console.log("User Name: ", userName);
+        console.log("User Email: ", userEmail);
+        console.log("User Phone: ", userPhone);
       }
-    );
+    });
   }
 });

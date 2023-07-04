@@ -3,14 +3,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const contactForm = document.getElementById("contactForm");
 
   if (contactForm) {
-    new Validator(
-      contactForm,
-      (err, res) => {
-        // return res;
-      },
-      {
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const validateHandler = new Validator(contactForm, (err, res) => err, {
         removeSpaces: true,
+      });
+
+      const isValid = validateHandler.validate();
+
+      if (isValid) {
+        console.log("first");
       }
-    );
+    });
   }
 });
