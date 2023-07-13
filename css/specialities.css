@@ -1,0 +1,90 @@
+/* Start of Page Banner */
+.page-banner {
+  height: 300px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+.page-banner::before {
+  content: "";
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: block;
+  top: 0px;
+  z-index: 1;
+}
+.page-banner .info {
+  z-index: 2;
+}
+.page-banner .title {
+  font-size: calc(2.25rem + 1.25vw);
+}
+.page-banner .breadcrumb-item:not(.active) {
+  opacity: 0.6;
+}
+.page-banner .breadcrumb-item.active {
+  opacity: 1;
+  color: var(--light);
+}
+@media screen and (min-width: 992px) {
+  .page-banner {
+    height: 400px;
+  }
+}
+/* End of Page Banner */
+
+/* Start of Speciality Tabs */
+.speciality-tab {
+  width: auto;
+  flex-grow: 1;
+  border-radius: 0;
+}
+.speciality-tab .btn,
+.speciality-tab .btn:active {
+  color: var(--light);
+  background-color: var(--dark);
+  font-size: 0.85rem;
+  width: 100%;
+  border: 2px solid transparent;
+  border-right-color: var(--light);
+  border-radius: 0;
+}
+[dir="rtl"] .speciality-tab .btn {
+  border-right-color: transparent;
+  border-left-color: var(--light);
+}
+.speciality-tab .btn:hover,
+.speciality-tab.swiper-slide-active .btn {
+  color: var(--dark);
+  background-color: var(--light-grey);
+  border-bottom-color: var(--dark);
+  border-right-color: var(--grey);
+}
+.btn-tab-nav {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  color: var(--light) !important;
+  background-color: var(--main-color) !important;
+  width: 40px;
+  z-index: 2;
+}
+.btn-tab-nav.swiper-button-disabled {
+  display: none;
+}
+.btn-tab-nav.swiper-prev {
+  left: 0;
+}
+.btn-tab-nav.swiper-next {
+  right: 0;
+}
+[dir="rtl"] .btn-tab-nav.swiper-prev {
+  left: auto;
+  right: 0;
+}
+[dir="rtl"] .btn-tab-nav.swiper-next {
+  left: 0;
+  right: auto;
+}
+/* End of Speciality Tabs */
